@@ -4,7 +4,7 @@
   <font face='Arial Narrow'> Usuario: <? echo $_SESSION["usuarioactual"] ?> </font>
 </h5>
 <h5>
-  <font face='Arial Narrow'> <a href="salir.php">Salir</a></font>
+  <font face='Arial Narrow'> <a href="../login/salir.php">Salir</a></font>
 </h5>
 <html lang="es">
 <meta charset="UTF-8">

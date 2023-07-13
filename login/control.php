@@ -9,13 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $recaptcha_secret = "6LelNM4eAAAAAGa56TtxUC-52W1IjcbWDQFdQKQn";
     $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $recaptcha_secret . "&response=" . $_POST['g-recaptcha-response']);
     $response = json_decode($response, true);
-    if ($response["success"] === false) {
+ /*    if ($response["success"] === false) {
         echo "<script>alert('Asegusere de validar el Captcha. Click en Aceptar para Intentarlo nuevamente .'); window.location.href=\"login.html\"</script>";
-    } else {
+    } else { */
         include 'Funciones.php';
         $con = conectar();
         /* El query valida si el usuario ingresado existe en la base de datos. Se utiliza la funci�n htmlentities para evitar inyecciones SQL. */
-        $myusuario = mysqli_query($con, "SELECT username FROM usercontratantes WHERE username = '" . htmlentities($_POST["usuario"]) . "'", $link);
+        $myusuario = mysqli_query($con, "SELECT username FROM usercontratantes WHERE username = '" . htmlentities($_POST["usuario"]) . "'");
         $nmyusuario = mysqli_num_rows($myusuario);
 
         //Si existe el usuario, validamos tambi�n la contrase�a ingresada y el estado del usuario... 
@@ -32,13 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     $_SESSION["usuarioactual"] = $row["full_name"];
                     $_SESSION["ide"] = $row["id"];
                 };
-                header("Location: index.html");
+                header("Location: ../contracts/ingresoContrato_p.php");
             } else {
                 echo "<script>alert('La clave del usuario no es correcta.'); window.location.href=\"login.html\"</script>";
             }
         } else {
             echo "<script>alert('El usuario $usuario no existe.'); window.location.href=\"login.html\"</script>";
-        }
+        //}
     }
 }
 mysqli_close($con);
