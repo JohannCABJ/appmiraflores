@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/expresom/
+    - for f in /home/expresom/app.expresomiraflores/*; do
+      /bin/cp $f /home/user/public_html/
+      done
