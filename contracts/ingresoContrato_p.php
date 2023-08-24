@@ -1,4 +1,3 @@
-<? include("../login/seguridad.php"); ?>
 <!DOCTYPE html>
 <h5>
   <font face='Arial Narrow'> Usuario: <? echo $_SESSION["usuarioactual"] ?> </font>
