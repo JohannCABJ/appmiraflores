@@ -140,7 +140,7 @@
         //
         ?>
         <?php
-        include 'Funciones.php';
+        include '../config/Funciones.php';
         ?>
         <?php
         $con = conectar();
