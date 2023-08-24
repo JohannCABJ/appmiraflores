@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div align="center"> <img src="../images/logo.jpg" width="200" height="80" />
+<div align="center"> <img src="../images/logo.png" width="200" height="80" />
 
   <header>
     <title>Ingreso de contrato prestacion de servicio</title>
@@ -79,20 +79,20 @@
         <input type="text" id="direccioncontratante" name="direccioncontratante" maxlength="17" placeholder="Direccion del contratante.." required>
 
         <label for="telefonocontratante">Telefono Contratante</label>
-        <input type="text" id="telefonocontratante" name="telefonocontratante" maxlength="12" placeholder="No. Telefono resppnsable del contratante.." required>
+        <input type="text" id="telefonocontratante" name="telefonocontratante" maxlength="12" placeholder="No. Telefono responsable del contratante.." required>
 
         <label for="origendestino">Origen-Destino</label>
         <input type="text" id="origendestino" name="origendestino" maxlength="187" placeholder="Ingrese el recorrido.." required>
 
         <label for="valorfuec">Valor del Servicio</label>
-        <input type="text" id="valorfuec" name="valorfuec" maxlength="12" placeholder="Valor del FUEC.." required>
+        <input type="text" id="valorfuec" name="valorfuec" maxlength="12" placeholder="Valor del contrato" required>
 
     </div>
 
     <tr>
       <td align="center" valign="middle" bgcolor="#ECECEC">
         <p class="style3">
-          <font face="Arial Narrow" style="text-align: left">Fecha Inicio Recorrido </font>
+          <font face="Arial Narrow" style="text-align: left">Fecha Inicio Contrato </font>
         </p>
       </td>
       <td height="32" width="455" align="center" valign="middle" bgcolor="#ECECEC">
@@ -108,7 +108,7 @@
     <tr>
       <td align="center" valign="middle" bgcolor="#ECECEC">
         <p class="style3">
-          <font face="Arial Narrow">Fecha Final Recorrido </font>
+          <font face="Arial Narrow">Fecha Final Contrato </font>
         </p>
       </td>
       <td height="33" align="center" valign="middle" bgcolor="#ECECEC">
