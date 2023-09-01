@@ -1,5 +1,5 @@
 <?php
-define("ENVIRONMENT", "prod");
+define("ENVIRONMENT", "dev");
 //include '../env.php';
 
 //conectar();

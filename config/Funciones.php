@@ -21,7 +21,6 @@ function conectar()
     return ($sock);
 };
 
-
 if (ENVIRONMENT === "dev") {
     // Entorno de desarrollo local
     $baseImagePath = "/opt/lampp/htdocs/mirafloresapp/tmp/";
