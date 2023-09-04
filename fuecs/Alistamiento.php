@@ -216,7 +216,8 @@ $sqlAL = "SELECT Placa, Activo FROM tblAlistamiento WHERE Placa ='" . $_POST['pl
 $resultAL = mysqli_query($bd, $sqlAL);
 // *******  AQUI SE QUITA LA VALIDACION DE LA VIGENCIA DEL PROTOCOLO DE ALISTAMIENTO **********
 if (mysqli_num_rows($resultAL) >= 1) {
-	die("El Protocolo de Alistamiento del vehículo " . $_POST['placa'] . " ya se encuentra actualizado <br><br> <a href=\"SeleccionContrato_p.php\">Generar FUEC </a><div align='center'>");
+	die("<font face='Arial Narrow'><font size=5><div align='center'> El Protocolo de Alistamiento del vehículo " . $_POST['placa'] . " ya se encuentra actualizado <br><br></div></font></font> <div align='center'><input type='button' onclick=\"location.href = 'SeleccionContrato_p.php'\" value='Generar FUEC'></div>");
+
 } else {
 	@mysqli_query($bd, "SET NAMES 'utf8'");
 	$placa = mysqli_real_escape_string($bd, $_POST['placa']);
@@ -305,7 +306,7 @@ $desde = 'Desde: ' . $email . "\r\n" .
 	'Cc: dev@expresomiraflores.com' . "\r\n" .
 	'X-Mailer: PHP/' . phpversion();
 $contingut = "
- El mensaje se ha sido enviado desde transportespoira.com el dia: $dia a las: $hora\n\n 
+ El mensaje se ha sido enviado desde Expreso Miraflores el dia: $dia a las: $hora\n\n 
 ----------------------------------------------------------------------------\n
  Protocolo No.: $protocol\n
  Fecha: $fecha\n
