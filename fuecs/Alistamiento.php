@@ -89,7 +89,7 @@ if ($_POST["action"] == "upload") {
 			$i = strtolower(end($arrname));
 			if (in_array($i, $tips)) {
 				$varname = $varrand . "." . $i;
-				if (copy($vartemp, $varpath . $varname)) {
+				if (move_uploaded_file($vartemp, $varpath . $varname)) {
 					$varpath = $varpath . $varname;
 					$varstat = "ok";
 				} else {
@@ -124,7 +124,7 @@ if ($_POST["action"] == "upload") {
 			$i1 = strtolower(end($arrname1));
 			if (in_array($i1, $tips1)) {
 				$varname1 = $varrand1 . "." . $i1;
-				if (copy($vartemp1, $varpath1 . $varname1)) {
+				if (move_uploaded_file($vartemp1, $varpath1 . $varname1)) {
 					$varpath1 = $varpath1 . $varname1;
 					$varstat1 = "ok";
 				} else {
@@ -158,7 +158,7 @@ if ($_POST["action"] == "upload") {
 			$i2 = strtolower(end($arrname2));
 			if (in_array($i2, $tips2)) {
 				$varname2 = $varrand2 . "." . $i2;
-				if (copy($vartemp2, $varpath2 . $varname2)) {
+				if (move_uploaded_file($vartemp2, $varpath2 . $varname2)) {
 					$varpath2 = $varpath2 . $varname2;
 					$varstat2 = "ok";
 				} else {
@@ -192,7 +192,7 @@ if ($_POST["action"] == "upload") {
 			$i3 = strtolower(end($arrname3));
 			if (in_array($i3, $tips3)) {
 				$varname3 = $varrand3 . "." . $i3;
-				if (copy($vartemp3, $varpath3 . $varname3)) {
+				if (move_uploaded_file($vartemp3, $varpath3 . $varname3)) {
 					$varpath3 = $varpath3 . $varname3;
 					$varstat3 = "ok";
 				} else {
@@ -285,7 +285,6 @@ if (mysqli_num_rows($resultAL) >= 1) {
 $sql2017 = "UPDATE tblVencimientos SET FechaKmActual = '$_POST[fecha]' , KmActual = '$_POST[km]'  WHERE Placa = '$_POST[placa]'";
 
 if (mysqli_query($bd, $sql2017)) {
-
 } else {
 	echo "No fue Posible actualizar el odómetro" . mysqli_error($bd);
 }
