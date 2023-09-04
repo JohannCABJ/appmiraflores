@@ -26,5 +26,5 @@ if (ENVIRONMENT === "dev") {
     $baseImagePath = "/opt/lampp/htdocs/mirafloresapp/tmp/";
 } else {
     // Entorno de producción
-    $baseImagePath = "http://app.expresomiraflores.com/tmp/";
+    $baseImagePath = "/home/expresom/app.expresomiraflores.com/tmp/";
 }
