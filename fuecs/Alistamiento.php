@@ -148,7 +148,7 @@ $varpath2 = $baseImagePath;
 $varstat2 = "";
 
 if ($_POST["action"] == "upload") {
-	if (is_uploaded_file($_FILES["imagenlat"]["tmp_name"])) {
+	if (is_uploaded_file($_FILES["imagenlat1"]["tmp_name"])) {
 		$varname2 = $_FILES["imagenlat1"]['name'];
 		$vartemp2 = $_FILES['imagenlat1']['tmp_name'];
 		$vartype2 = $_FILES['imagenlat1']['type'];
@@ -182,7 +182,7 @@ $varpath3 = $baseImagePath;
 $varstat3 = "";
 
 if ($_POST["action"] == "upload") {
-	if (is_uploaded_file($_FILES["imagenlat"]["tmp_name"])) {
+	if (is_uploaded_file($_FILES["posterior"]["tmp_name"])) {
 		$varname3 = $_FILES["posterior"]['name'];
 		$vartemp3 = $_FILES['posterior']['tmp_name'];
 		$vartype3 = $_FILES['posterior']['type'];
@@ -311,7 +311,7 @@ $contingut = "
  Fecha: $fecha\n
  Placa: $placa\n
  Km.: $kilom\n
- Para obtener el FUEC elaborado, ingrese aqui: https://aplicaciones.transportespoira.com/AlistamientoPDF.php/?var=$protocol
+ Para obtener el FUEC elaborado, ingrese aqui: https://app.expresomiraflores.com/fuecs/AlistamientoPDF.php/?var=$protocol
  ----------------------------------------------------------------------------\n
  ";
 mail($destinatario, $subject, $contingut, $desde);
