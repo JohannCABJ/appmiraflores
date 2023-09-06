@@ -1,10 +1,10 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <link rel="shortcut icon" href="Favicon.png">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div align="center"> <img src="/images/logoPoiraTransparent.png" width="200" height="80" />
+<div align="center"> <img src="https://i.ibb.co/ynPGDxL/logo.png" width="200" height="80" />
   <header>
     <title>Seleccion Contrato para generar FUEC</title>
     <script>

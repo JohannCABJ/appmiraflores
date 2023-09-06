@@ -1,11 +1,9 @@
 <?php
 include '../config.php';
 
+
 function conectar()
 {
-    // Define una constante para indicar el entorno (dev o prod)
-    //define("ENVIRONMENT", "dev"); // Cambia a "prod" en producción
-
     if (ENVIRONMENT === "dev") {
         $sock = mysqli_connect("localhost", "root", "", "expresom_app");
     } elseif (ENVIRONMENT === "prod") {
@@ -27,4 +25,12 @@ if (ENVIRONMENT === "dev") {
 } else {
     // Entorno de producción
     $baseImagePath = "/home/expresom/app.expresomiraflores.com/tmp/";
+}
+
+if (ENVIRONMENT === "dev") {
+    // Entorno de desarrollo local
+    $urlqr = "http://192.168.1.73/mirafloresapp/fuecs/ActualizarFUECPDFOcasionalCopy.php";
+} else {
+    $urlqr = "/ActualizarFUECPDFOcasionalCopy.php";
+    
 }

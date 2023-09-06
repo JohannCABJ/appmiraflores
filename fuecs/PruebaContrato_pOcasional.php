@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div align="center"> <img src="images/logoPoiraTransparent.png" width="200" height="80" />
+<div align="center"> <img src="https://i.ibb.co/ynPGDxL/logo.png" width="200" height="80" />
   <header>
     <title>Generacion de FUEC</title>
     <font face='Arial Narrow' size="+1"> <b> </b> </font>
@@ -75,7 +75,7 @@
         <input type="text" id="telefonocontratante" name="telefonocontratante" maxlength="12" placeholder="No. Telefono resppnsable del contratante.." required>
 
         <label for="origendestino">Origen-Destino</label>
-        <input type="text" id="origendestino" name="origendestino" maxlength="187" placeholder="Ingrese el recorrido.." required>
+        <input type="text" id="origendestino" name="origendestino" maxlength="230" placeholder="Ingrese el recorrido.." required>
 
         <label for="totalkm">Total Km. del recorrido</label>
         <input type="text" id="totalkm" name="totalkm" maxlength="4" placeholder="Ingrese el Km total del recorrido.." required>
@@ -137,12 +137,12 @@
         //
         ?>
         <?php
-        include './config/Funciones.php';
+        include '../config/Funciones.php';
         ?>
         <?php
         $con = conectar();
 
-        $dat = "SELECT * FROM tblVencimientos WHERE Estado LIKE 'ACTIVO' ORDER BY Placa ASC";
+        $dat = "SELECT Placa FROM tblVencimientos WHERE Estado LIKE 'ACTIVO' ORDER BY Placa ASC";
         $sql = mysqli_query($con, $dat);
         ?>
 
