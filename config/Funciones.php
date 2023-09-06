@@ -22,15 +22,9 @@ function conectar()
 if (ENVIRONMENT === "dev") {
     // Entorno de desarrollo local
     $baseImagePath = "/opt/lampp/htdocs/mirafloresapp/tmp/";
+    $urlqr = "http://192.168.1.73/mirafloresapp/fuecs/ActualizarFUECPDFOcasionalCopy.php";
 } else {
     // Entorno de producción
     $baseImagePath = "/home/expresom/app.expresomiraflores.com/tmp/";
-}
-
-if (ENVIRONMENT === "dev") {
-    // Entorno de desarrollo local
-    $urlqr = "http://192.168.1.73/mirafloresapp/fuecs/ActualizarFUECPDFOcasionalCopy.php";
-} else {
     $urlqr = "/ActualizarFUECPDFOcasionalCopy.php";
-    
 }
