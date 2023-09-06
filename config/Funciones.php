@@ -26,5 +26,5 @@ if (ENVIRONMENT === "dev") {
 } else {
     // Entorno de producción
     $baseImagePath = "/home/expresom/app.expresomiraflores.com/tmp/";
-    $urlqr = "/ActualizarFUECPDFOcasionalCopy.php";
+    $urlqr = "http://app.expresomiraflores.com/fuecs/ActualizarFUECPDFOcasionalCopy.php";
 }
