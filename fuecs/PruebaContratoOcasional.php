@@ -6,7 +6,6 @@
 <div align="center"> <img src="https://i.ibb.co/ynPGDxL/logo.png" width="200" height="80" />
   <link rel="shortcut icon" href="Favicon.png">
   <h5>
-    <font face='Arial Narrow'> Usuario: <? echo $_SESSION["usuarioactual"] ?> </font>
   </h5>
   <h5>
     <font face='Arial Narrow'> <a href="salir.php">Cerrar sesión</a></font>
