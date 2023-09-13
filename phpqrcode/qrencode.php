@@ -140,7 +140,7 @@
                 $ret = $this->rsblocks[$row]->data[$col];
             } else if($this->count < $this->dataLength + $this->eccLength) {
                 $row = ($this->count - $this->dataLength) % $this->blocks;
-                $col = ($this->count - $this->dataLength) / $this->blocks;
+                $col = intval($this->count - $this->dataLength) / $this->blocks;
                 $ret = $this->rsblocks[$row]->ecc[$col];
             } else {
                 return 0;
@@ -342,6 +342,8 @@
             
                 if($this->bit == -1) {
                     $this->bit = 0;
+                    $this->bit = (int)$this->bit; // Cast a int
+
                     return array('x'=>$this->x, 'y'=>$this->y);
                 }
 

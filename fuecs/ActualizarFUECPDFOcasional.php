@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 //Incluimos la libreria fpdf
 include("../phpqrcode/qrlib.php");
-require('../fpdf186/fpdf.php');
+require("../fpdf186/fpdf.php");
 //$con=mysqli_connect("localhost", "transroc", "wZMQbM2TVSzFPBsiHd","transroc_ROCA");
 include '../config/Funciones.php';
 $bd  = conectar();
@@ -225,10 +225,11 @@ if (mysqli_num_rows($listado22) > 0) {
 				$pdf->Cell(110, 3, 'Mail: info@expresomiraflores.com', 0, 0, 'l');
 				$pdf->Cell(84, 3, 'Con un certificado digital emitido por EXPRESO MIRAFLORES', 0, 1, '0');
 				$pdf->Image('https://i.ibb.co/WWhCGps/logo-Super.jpg', 8, 255, 44, 11, 'jpg');
+        //QRcode::png('espetours.com', "images/QR.png", "Q", 4, 2);
 				//QRcode::png('./ActualizarFUECPDFOcasionalCopy.php/?var=9', "images/QR.png", "Q", 4, 2);
 				QRcode::png($urlqr."/?var=" .$noFUEC, "images/QR.png", "Q", 4, 2);
 				//QRcode::png("https://aplicaciones.transportespoira.com/ActualizarFUECPDFOcasionalCopy.php/?var=$noFUEC", "images/QR.png", "Q", 4, 2);
-				$pdf->Image('https://i.ibb.co/MCtM3Pd/download.png', 92, 238, 28, 24, 'PNG');
+				$pdf->Image('https://i.ibb.co/Gx37Dx3/QR.png', 92, 238, 28, 24, 'PNG');
 				$pdf->Cell(110, 3, 'Puede verificar este documento escaneando el codigo QR', 0, 0, 'l');
 				$pdf->Cell(84, 3, 'Razon: Soy el autor de este documento ', 0, 1, '0');
 				$pdf->Image('https://i.ibb.co/5Ts3fYr/signRL.png', 174, 238, 35, 21, 'PNG');
