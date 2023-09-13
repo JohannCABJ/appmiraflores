@@ -229,7 +229,7 @@ if (mysqli_num_rows($listado22) > 0) {
 				//QRcode::png('./ActualizarFUECPDFOcasionalCopy.php/?var=9', "images/QR.png", "Q", 4, 2);
 				QRcode::png($urlqr."/?var=" .$noFUEC, "images/QR.png", "Q", 4, 2);
 				//QRcode::png("https://aplicaciones.transportespoira.com/ActualizarFUECPDFOcasionalCopy.php/?var=$noFUEC", "images/QR.png", "Q", 4, 2);
-				$pdf->Image('https://i.ibb.co/Gx37Dx3/QR.png', 92, 238, 28, 24, 'PNG');
+				$pdf->Image('images/QR.png', 92, 238, 28, 24, 'PNG');
 				$pdf->Cell(110, 3, 'Puede verificar este documento escaneando el codigo QR', 0, 0, 'l');
 				$pdf->Cell(84, 3, 'Razon: Soy el autor de este documento ', 0, 1, '0');
 				$pdf->Image('https://i.ibb.co/5Ts3fYr/signRL.png', 174, 238, 35, 21, 'PNG');
