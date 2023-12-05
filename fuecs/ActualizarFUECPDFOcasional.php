@@ -224,7 +224,7 @@ if (mysqli_num_rows($listado22) > 0) {
 				$pdf->Cell(84, 3, 'REPRESENTANTE LEGAL', 0, 1, '0');
 				$pdf->Cell(110, 3, 'Mail: info@expresomiraflores.com', 0, 0, 'l');
 				$pdf->Cell(84, 3, 'Con un certificado digital emitido por EXPRESO MIRAFLORES', 0, 1, '0');
-				$pdf->Image('https://i.ibb.co/WWhCGps/logo-Super.jpg', 8, 255, 44, 11, 'jpg');
+				$pdf->Image('https://i.ibb.co/NLx792D/logo-Super.png', 8, 255, 28, 9, 'png');
         //QRcode::png('espetours.com', "images/QR.png", "Q", 4, 2);
 				//QRcode::png('./ActualizarFUECPDFOcasionalCopy.php/?var=9', "images/QR.png", "Q", 4, 2);
 				QRcode::png($urlqr."/?var=" .$noFUEC, "images/QR.png", "Q", 4, 2);
@@ -232,9 +232,14 @@ if (mysqli_num_rows($listado22) > 0) {
 				$pdf->Image('images/QR.png', 92, 238, 28, 24, 'PNG');
 				$pdf->Cell(110, 3, 'Puede verificar este documento escaneando el codigo QR', 0, 0, 'l');
 				$pdf->Cell(84, 3, 'Razon: Soy el autor de este documento ', 0, 1, '0');
-				$pdf->Image('https://i.ibb.co/5Ts3fYr/signRL.png', 174, 238, 35, 21, 'PNG');
+				$pdf->Image('https://i.ibb.co/5Ts3fYr/signRL.png', 170, 232, 35, 21, 'PNG');
 				$pdf->Cell(110, 3, 'Protocolo de Alistamiento No.' . $Protocol . '', 0, 0, 'l');
-				$pdf->Cell(84, 3, 'Fecha de elaboracion.' . $fechaelab . '', 0, 0, 'l');
+				$pdf->Cell(84, 3, 'Fecha de elaboracion.' . $fechaelab . '', 0, 1, 'l');
+				$pdf->Cell(110, 3, '', 0, 0, 'l');
+				$pdf->Cell(84, 3, 'Firma digital ampara por la Ley 527 de 1999 ', 0, 1, 'l');
+				$pdf->Cell(110, 3, '', 0, 0, 'l');
+				$pdf->Cell(84, 3, 'Decreto 2364 de 2012 ', 0, 1, 'l');
+				$pdf->Cell(110, 3, '', 0, 0, 'l');
 				$pdf->Ln(14);
 				$pdf->SetFont('Arial', 'B', 10);
 				$pdf->Cell(194, 10, '         INSTRUCTIVO PARA LA DETERMINACION DEL NUMERO CONSECUTIVO DEL FUEC', 0, 1, 'C'); //**

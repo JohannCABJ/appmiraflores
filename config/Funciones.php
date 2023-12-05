@@ -7,7 +7,7 @@ function conectar()
     if (ENVIRONMENT === "dev") {
         $sock = mysqli_connect("localhost", "root", "", "expresom_app");
     } elseif (ENVIRONMENT === "prod") {
-        $sock = mysqli_connect("localhost", "expresom", ")J9Fv7Qs6ts2B:", "expresom_app");
+        $sock = mysqli_connect("localhost", "expresom", "6a5i@S3C6;o4neRi-qa[", "expresom_app");
     } else {
         die("Entorno no válido");
     }
