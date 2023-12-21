@@ -138,10 +138,12 @@ if (mysqli_num_rows($listado22) > 0) {
 		}
 		//}
 		$fechaActualL = date('Y');
-		$listado = mysqli_query($bd, "SELECT * FROM tblContratos WHERE NoContrato= 0024 ");
+		$listado = mysqli_query($bd, "SELECT * FROM tblContratos4 WHERE NoContrato= 0024 ");
 		//$listado = mysql_query("SELECT * FROM tblContratos WHERE NoContrato='" .$_POST['contrato1']."'");
-
 		if (mysqli_num_rows($listado) > 0) {
+      $lineas = ceil($pdf->GetStringWidth('ORIGEN-DESTINO,DESCRIBIENDO EL RECORRIDO:  ' . $fila1['OrigenDestino']) / 194);
+      $alturaTotal = 5 * $lineas;
+
 			while ($fila = mysqli_fetch_array($listado)) {
 				$pdf->SetFont('Arial', 'B', 10); //Tipo de letra, estilo y tama�o
 				$pdf->Cell(0, 4, 'TERRESTRE AUTOMOTOR ESPECIAL No. 473007718' . $fechaActualL . $fila['NoContrato'] . $fila1['IdFUEC'], 0, 1, 'C');
@@ -218,27 +220,34 @@ if (mysqli_num_rows($listado22) > 0) {
 				$pdf->Cell(34, 8, $fila1['DireccionResponsableCte'], 1, 0, 'C');
 				$pdf->Cell(24, 8, $fila1['TelResponsableCte'], 1, 1, 'C');
 				$pdf->Cell(0, 2, '', 0, 1, 'C');
-				$pdf->Cell(110, 3, 'EXPRESO MIRAFLORES Mz. B Cs 8 Villa Carolina Purificacion Tol.', 0, 0, 'l');
-				$pdf->Cell(84, 3, 'Firmado digitalmente por JESUS HELI ARIZA MANRIQUE', 0, 1, '0');
-				$pdf->Cell(110, 3, 'Cel. 3118912134', 0, 0, 'l');
-				$pdf->Cell(84, 3, 'REPRESENTANTE LEGAL', 0, 1, '0');
-				$pdf->Cell(110, 3, 'Mail: info@expresomiraflores.com', 0, 0, 'l');
-				$pdf->Cell(84, 3, 'Con un certificado digital emitido por EXPRESO MIRAFLORES', 0, 1, '0');
-				$pdf->Image('https://i.ibb.co/NLx792D/logo-Super.png', 8, 255, 28, 9, 'png');
+				$pdf->Cell(110, 3, 'Mz. B Cs 8 Villa Carolina Purificacion Tol.', 0, 0, 'C');
+				$pdf->Cell(84, 3, '', 0, 1, '0');
+				$pdf->Cell(110, 3, 'Cel. 3118912134 / 3204050714', 0, 0, 'C');
+				$pdf->Cell(84, 3, '', 0, 1, '0');
+				$pdf->Cell(110, 3, 'Mail: info@expresomiraflores.com', 0, 0, 'C');
+				$pdf->Cell(84, 3, '', 0, 1, '0');
+        $yImagen = 233 + $alturaTotal -15;
+				$pdf->Image('https://i.ibb.co/NLx792D/logo-Super.png', 50, $yImagen +15 , 26, 9, 'png');
         //QRcode::png('espetours.com', "images/QR.png", "Q", 4, 2);
 				//QRcode::png('./ActualizarFUECPDFOcasionalCopy.php/?var=9', "images/QR.png", "Q", 4, 2);
 				QRcode::png($urlqr."/?var=" .$noFUEC, "images/QR.png", "Q", 4, 2);
 				//QRcode::png("https://aplicaciones.transportespoira.com/ActualizarFUECPDFOcasionalCopy.php/?var=$noFUEC", "images/QR.png", "Q", 4, 2);
-				$pdf->Image('images/QR.png', 92, 238, 28, 24, 'PNG');
-				$pdf->Cell(110, 3, 'Puede verificar este documento escaneando el codigo QR', 0, 0, 'l');
-				$pdf->Cell(84, 3, 'Razon: Soy el autor de este documento ', 0, 1, '0');
-				$pdf->Image('https://i.ibb.co/5Ts3fYr/signRL.png', 170, 232, 35, 21, 'PNG');
-				$pdf->Cell(110, 3, 'Protocolo de Alistamiento No.' . $Protocol . '', 0, 0, 'l');
+				$pdf->Image('images/QR.png', 8, $yImagen, 28, 24, 'PNG');
+				$pdf->Cell(110, 3, 'CALIDAD Y SERVICIO A SU ALCANCE', 0, 0, 'C');
+				$pdf->Cell(84, 3, '', 0, 1, '0');
+        $pdf->Cell(110, 3, 'Verifique este documento con el codigo QR', 0, 0, 'C');
+				//$pdf->Image('https://i.ibb.co/5Ts3fYr/signRL.png', 119, $yImagen +1, 35, 21, 'PNG');
+        $pdf->Image('https://i.ibb.co/0VgLBKJ/sign-Seal2.png.png', 119, $yImagen +1, 60, 21, 'PNG');
+				//$pdf->Cell(110, 3, 'Protocolo de Alistamiento No.' . $Protocol . '', 0, 0, 'l');
+        $pdf->Cell(84, 3, 'JESUS HELI ARIZA MANRIQUE', 0, 1, 'l');
+        $pdf->Cell(110, 3, '', 0, 0, 'C');
+				$pdf->Cell(84, 3, 'FIRMA Y SELLO DEL REPRESENTANTE LEGAL (GERENTE)', 0, 1, 'l');
+				$pdf->Cell(110, 3, '', 0, 0, 'l');
 				$pdf->Cell(84, 3, 'Fecha de elaboracion.' . $fechaelab . '', 0, 1, 'l');
 				$pdf->Cell(110, 3, '', 0, 0, 'l');
-				$pdf->Cell(84, 3, 'Firma digital ampara por la Ley 527 de 1999 ', 0, 1, 'l');
+				$pdf->Cell(84, 3, 'Firma digital amparada por la Ley 527 de 1999 - Decreto 2364 de 2012', 0, 1, 'l');
 				$pdf->Cell(110, 3, '', 0, 0, 'l');
-				$pdf->Cell(84, 3, 'Decreto 2364 de 2012 ', 0, 1, 'l');
+				//$pdf->Cell(84, 3, 'Decreto 2364 de 2012 ', 0, 1, 'l');
 				$pdf->Cell(110, 3, '', 0, 0, 'l');
 				$pdf->Ln(14);
 				$pdf->SetFont('Arial', 'B', 10);
