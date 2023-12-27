@@ -139,7 +139,7 @@ if (mysqli_num_rows($listado22) > 0) {
     }
     //}
     $fechaActualL = date('Y');
-    $listado = mysqli_query($bd, "SELECT NoContrato FROM tblContratos4 WHERE NoContrato= 0024 ");
+    $listado = mysqli_query($bd, "SELECT NoContrato FROM tblContratos WHERE NoContrato= 0024 ");
     //$listado = mysql_query("SELECT * FROM tblContratos WHERE NoContrato='" .$_POST['contrato1']."'");
     if (mysqli_num_rows($listado) > 0) {
       $lineas = ceil($pdf->GetStringWidth('ORIGEN-DESTINO,DESCRIBIENDO EL RECORRIDO:  ' . $fila1['OrigenDestino']) / 194);
